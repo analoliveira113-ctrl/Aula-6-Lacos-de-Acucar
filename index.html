@@ -155,6 +155,7 @@
     </section>
         
     <script>
+        // Verifique se esta URL é exatamente a do seu projeto na Vercel
         const API_URL = 'https://aula-7-backend-vercel-lacos-de-acuc.vercel.app/api';
         const navCategorias = document.getElementById('nav-categorias');
         const listaProdutos = document.getElementById('lista-produtos');
@@ -164,6 +165,7 @@
         async function carregarCategorias() {
             try {
                 const response = await fetch(`${API_URL}/categorias`);
+                if (!response.ok) throw new Error('Erro na rede');
                 categoriasData = await response.json();
                 renderizarBotoesCategorias();
                 if(categoriasData.length > 0) {
@@ -171,7 +173,7 @@
                 }
             } catch (error) {
                 console.error('Erro ao carregar categorias:', error);
-                navCategorias.innerHTML = '<p class="text-red-500">Erro ao carregar menu.</p>';
+                navCategorias.innerHTML = '<p class="text-red-500 text-xs">Erro ao conectar ao banco.</p>';
             }
         }
 
@@ -216,21 +218,27 @@
 
         function renderizarProdutos(produtos) {
             listaProdutos.innerHTML = '';
-            if (produtos.length === 0) {
+            if (!produtos || produtos.length === 0) {
                 listaProdutos.innerHTML = '<p class="col-span-2 text-muted py-10">Nenhum produto nesta categoria.</p>';
                 return;
             }
+
             produtos.forEach(p => {
-                const precoFormatado = p.preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
-                const imgSource = (p.imagem && p.imagem.startsWith('http')) ? p.imagem : `./assets/images/${p.imagem || 'logo.png'}`;
+                // CORREÇÃO DOS CAMPOS: Usando p.preco e p.imagem_url (conforme SQL)
+                const valor = p.preco || 0;
+                const precoFormatado = valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
                 
-                // Sanitização para evitar erros no modal
+                // Prioriza imagem_url que definimos no Supabase
+                const imgPath = p.imagem_url || p.imagem || 'logo.png';
+                const imgSource = imgPath.startsWith('http') ? imgPath : `./assets/images/${imgPath}`;
+                
+                // Limpa aspas simples da descrição para não quebrar o clique
                 const descSanitizada = (p.descricao || '').replace(/'/g, "\\'").replace(/\n/g, " ");
 
                 const card = document.createElement('div');
                 card.className = "bg-white rounded-[25px] p-4 shadow-sm border border-gray-100 relative flex flex-col hover:shadow-xl transition-all duration-300 group";
                 card.innerHTML = `
-                    <div class="absolute inset-0 z-0 cursor-pointer" onclick="abrirModalDetalhes('${p.nome}', ${p.preco}, '${descSanitizada}', '${imgSource}', '${p.id}')"></div>
+                    <div class="absolute inset-0 z-0 cursor-pointer" onclick="abrirModalDetalhes('${p.nome}', ${valor}, '${descSanitizada}', '${imgSource}', '${p.id}')"></div>
                     <div class="h-32 flex justify-center items-center mb-4 relative z-10 pointer-events-none">
                         <img src="${imgSource}" alt="${p.nome}" class="max-h-full max-w-full object-contain transition-transform duration-500 drop-shadow-md group-hover:scale-110" onerror="this.src='./assets/images/logo.png'">
                     </div>
@@ -238,7 +246,7 @@
                         <h4 class="font-bold text-dark text-sm leading-tight h-10 overflow-hidden line-clamp-2">${p.nome}</h4>
                         <p class="text-primary font-black text-lg mt-1">${precoFormatado}</p>
                     </div>
-                    <button onclick="adicionarItem('${p.id}', '${p.nome}', ${p.preco})"
+                    <button onclick="adicionarItem('${p.id}', '${p.nome}', ${valor})"
                         class="w-full bg-primary text-white py-3 rounded-2xl text-xs font-black mt-3 shadow-md hover:bg-black active:scale-95 transition-all z-10 relative">
                         Adicionar
                     </button>
