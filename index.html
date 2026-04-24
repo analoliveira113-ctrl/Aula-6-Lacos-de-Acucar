@@ -156,7 +156,7 @@
         
     <script>
         // Verifique se esta URL é exatamente a do seu projeto na Vercel
-        const API_URL = 'http://localhost:3004/api';
+        const API_URL = 'https://aula-7-backend-vercel-lacos-de-acuc.vercel.app/api';
         const navCategorias = document.getElementById('nav-categorias');
         const listaProdutos = document.getElementById('lista-produtos');
         const categoriaTitulo = document.getElementById('categoria-titulo');
@@ -166,7 +166,12 @@
             try {
                 const response = await fetch(`${API_URL}/categorias`);
                 if (!response.ok) throw new Error('Erro na rede');
-                categoriasData = await response.json();
+                const rawData = await response.json();
+                // Garante que cada categoria tenha um id (usa índice+1 como fallback)
+                categoriasData = rawData.map((cat, index) => ({
+                    ...cat,
+                    id: cat.id ?? (index + 1)
+                }));
                 renderizarBotoesCategorias();
                 if(categoriasData.length > 0) {
                     selecionarCategoria(categoriasData[0].id, categoriasData[0].nome);
