@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <!-- Configurações para PWA (manifest e tema)-->
+    <link rel='manifest' href="manifest.json">
+    <meta name="theme-color" content="#1b4414">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel='apple=touch-icon' href="./assets/img/logo.png">
+    <link rel='icon' type="image/png" sizes="32x32" href="./assets/img/logo.png">
+    <link rel='icon' type="image/png" sizes="16x16"href="./assets/img/logo.png">
+    <link rel='icon' type="image/png" href="./assets/img/logo.png">
+    <link rel='shortcut icon' href="./assets/img/logo.png" type="image/x-icon">
+    <meta name="msapplication-TileImage" content="./assets/img/logo.png">
+    <meta property="og:image" content="./assets/img/logo.png">
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -443,6 +456,15 @@
             if (salvo) { carrinho = JSON.parse(salvo); atualizarCarrinho(); }
         }
         inicializar();
+
+        //AULA 12: REGISTRANDO O SERVICE WORKER (PARA TRANSFORMAR EM PWA)
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker Registrado no Porto!', reg))
+            .catch(err => console.error('Erro da página', err));
+        });
+    }
     </script>
 </body>
 </html>
