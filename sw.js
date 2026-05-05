@@ -20,6 +20,9 @@ const ASSETS = [
     './assets/images/lacos-trufados.png',
     './assets/images/logo.png',
     './assets/images/whatsapp.png',
+    './assets/images/Sem nome(64 x 64px).png',
+    
+
 ];
 
 
