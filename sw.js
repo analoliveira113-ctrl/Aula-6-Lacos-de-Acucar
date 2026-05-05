@@ -30,7 +30,7 @@ const ASSETS = [
 //Instala o Serviço Worker e coloca os arquivos no Cache
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then((chache) => {
+        caches.open(CACHE_NAME).then((cache) => {
             console.log('Laços artesanais com carinho no cache! 🎀✨');
             return cache.addAll(ASSETS);
         })
