@@ -7,11 +7,17 @@
     "theme_color": "#f08178",
     "description": "Sorvetes Artesanais - Laços de Açúcar",
     "icons": [
-    {
-        "src": "./assets/images/logo.png",
-        "sizes": "192x192",
-        "type": "image.png",
-        "purpose": "any"
-    }
+  {
+    "src": "./assets/images/logo.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose": "any"
+  },
+  {
+    "src": "./assets/images/logo.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose": "any"
+  }
 ]
 }
