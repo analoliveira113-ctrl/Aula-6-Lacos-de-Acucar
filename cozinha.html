@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haruy Sushi - Painel da Cozinha</title>
+    <title>Laços de Açúcar - Painel da Cozinha</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +23,7 @@
                         barlow: ['Barlow', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#ca3c3f',
+                        primary: '#6b3827',
                         dark: '#222222',
                         muted: '#999999',
                         footer: '#333333',
@@ -45,8 +45,8 @@
     <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center gap-4">
             <!-- Tenta carregar o logo de pastas anteriores, se falhar tem o texto alternativo (alt) visível -->
-            <img src="../assets/images/logo.png" onerror="this.src='../assets/images/logo.png'; this.onerror=null;"
-                alt="Haruy Sushi" class="h-12 w-auto">
+            <img src="./assets/images/logo.png" onerror="this.src='../img/logo.png'; this.src='./assets/img/logo.png'; this.onerror=null;"
+                alt="Laços de Açúcar" class="h-12 w-auto">
             <h1 class="text-2xl font-bold text-primary hidden md:block border-l-2 border-primary pl-4">Painel da Cozinha
             </h1>
         </div>
@@ -82,7 +82,7 @@
     <!-- JAVASCRIPT: Lógica de Buscar e Exibir Pedidos -->
     <script>
         // URL do Backend onde a nova rota foi publicada (na Vercel)
-        const URL_API = 'https://aula-7-backend-vercel-lacos-de-acucar-gq86jvwvj.vercel.app/api/pedidos';
+        const URL_API = 'https://aula-7-backend-vercel-lacos-de-acuc.vercel.app/api/pedidos';
 
         // Função para buscar os pedidos na API
         async function carregarPedidos() {
