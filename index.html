@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laços de Açúcar</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Configurações para PWA (manifest e tema)-->
     <link rel='manifest' href="manifest.json">
     <meta name="theme-color" content="#1b4414">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel='apple=touch-icon' href="./assets/img/logo.png">
+    <link rel='apple-touch-icon' href="./assets/img/logo.png">
     <link rel='icon' type="image/png" sizes="32x32" href="./assets/img/logo.png">
-    <link rel='icon' type="image/png" sizes="16x16"href="./assets/img/logo.png">
+    <link rel='icon' type="image/png" sizes="16x16" href="./assets/img/logo.png">
     <link rel='icon' type="image/png" href="./assets/img/logo.png">
     <link rel='shortcut icon' href="./assets/img/logo.png" type="image/x-icon">
     <meta name="msapplication-TileImage" content="./assets/img/logo.png">
     <meta property="og:image" content="./assets/img/logo.png">
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -42,9 +39,6 @@
         }
     </script>
 
-    </script>
-
-    <!-- animação do botão hamburguer -->
     <style>
         /* Primeira barra gira */
         #btn-mobile.active span:nth-child(1) {
@@ -61,22 +55,17 @@
             transform: rotate(-45deg) translateY(-8px);
         }
     </style>
-
 </head>
-
 
 <body class="font-barlow text-[#222222] bg-gray-100">
 
-    <!-- ================= HEADER ================= -->
     <nav class="bg-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center">
 
-                <!-- Logo -->
                 <a href="#" class="flex items-center py-4 px-2">
-                      <img src="./assets/images/logo.png" alt="laços de Açúcar" class="h-12" onerror="this.src='../img/logo.png'">
+                    <img src="./assets/images/logo.png" alt="laços de Açúcar" class="h-12" onerror="this.src='../img/logo.png'">
                 </a>
-
 
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#cardapio" class="py-4 px-2 text-primary border-b-4 border-primary font-semibold">Cardápio</a>
@@ -84,22 +73,17 @@
                     <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Contato</a>
                 </div>
 
-                <!-- Botão Hambúrguer Mobile -->
                 <div class="md:hidden flex items-center">
                     <button id="btn-mobile" class="flex flex-col justify-center items-center w-8 h-8 space-y-1">
-
-                        <!-- 3 Barras -->
                         <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
                         <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
                         <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-
                     </button>
                 </div>
 
             </div>
         </div>
 
-        <!-- Menu Mobile -->
         <div class="hidden md:hidden bg-white shadow-md" id="menu-mobile">
             <ul>
                 <li><a href="#cardapio" class="block text-sm px-4 py-3 text-white bg-primary font-semibold">Cardápio</a></li>
@@ -109,7 +93,6 @@
         </div>
     </nav>
 
-    <!-- ================= SCRIPT DO MENU ================= -->
     <script>
         const btn = document.getElementById('btn-mobile');
         const menu = document.getElementById('menu-mobile');
@@ -120,16 +103,12 @@
         });
     </script>
 
-
-    <!-- BANNER -->
     <section class="w-full text-center mt-10 px-6 md:px-0">
         <div class="flex flex-col md:flex-row items-center justify-center">
-
             <div class="w-full md:w-[45%] mb-8 md:mb-0">
                 <p class="text-2xl md:text-[40px] md:text-left md:px-24">
                     A verdadeira doçura de um sorvete
                 </p>
-
                 <div class="mt-6">
                     <a href="#cardapio"
                         class="border border-dark rounded-xl px-6 py-4 text-lg hover:bg-primary hover:text-white transition">
@@ -137,15 +116,12 @@
                     </a>
                 </div>
             </div>
-
             <div class="w-full md:w-[45%]">
                 <img src="./assets/images/banner.png" alt="Prato" class="w-[90%] mx-auto">
             </div>
-
         </div>
     </section>
 
-    <!-- CARDÁPIO -->
     <section id="cardapio" class="border-t border-dashed border-gray-400 w-full max-w-[700px] mx-auto mt-24 pt-12 pb-4 px-4 text-center">
         <h1 class="text-3xl font-black mb-6">Cardápio</h1>
 
@@ -162,25 +138,92 @@
                 Carregando...
             </div>
             <div id="lista-produtos" class="grid grid-cols-2 gap-4 lg:gap-6">
-                <!-- Injetado via JS -->
-            </div>
+                </div>
         </div>
     </section>
-        
+
+    <footer class="mt-24 text-center py-12 text-sm text-white bg-dark">
+        <h3 class="text-lg font-bold mb-2">laços de Açúcar - Sorvetes Artesanais</h3>
+        <p>Rua Prof. Toledo, 500, centro - Sorocaba</p>
+        <p>WhatsApp: (15) 98765-4321</p>
+        <p>Aberto todos os dias das 14h às 23h</p>
+    </footer>
+
+    <a href="https://wa.me/5515987654321" target="_blank" class="fixed bottom-5 right-5 z-40">
+        <img src="./assets/images/whatsapp.png" alt="Link WhatsApp" class="h-[60px]">
+    </a>
+
+    <div id="detalhes-modal"
+        class="fixed inset-0 bg-black/70 z-[100] flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 px-4 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-[400px] rounded-[30px] overflow-hidden transform scale-95 transition-transform duration-300 relative flex flex-col"
+            id="detalhes-modal-content">
+            <button onclick="fecharModalDetalhes()"
+                class="absolute top-4 right-4 bg-white/80 w-10 h-10 rounded-full font-bold text-2xl z-10 hover:text-primary transition-colors">&times;</button>
+            <div class="w-full h-[280px] bg-gray-50 flex justify-center items-center p-8 relative">
+                <img id="detalhes-img" src="" alt="Produto" class="w-full h-full object-contain drop-shadow-xl relative z-10">
+            </div>
+            <div class="p-8">
+                <h2 id="detalhes-nome" class="text-3xl font-black text-dark mb-1">Nome</h2>
+                <p id="detalhes-preco" class="text-2xl font-black text-primary mb-4">R$ 0,00</p>
+                <div class="bg-gray-50 rounded-xl p-4 mb-6">
+                    <p id="detalhes-desc" class="text-gray-600 text-sm leading-relaxed">Descrição...</p>
+                </div>
+                <button id="detalhes-btn-add" class="w-full bg-primary text-white py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-black active:scale-95 transition-all">Adicionar ao Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="carrinho-footer"
+        class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 z-[90] shadow-xl transform translate-y-full transition-transform duration-300 flex justify-between items-center cursor-pointer"
+        onclick="abrirModalCarrinho()">
+        <div>
+            <p class="text-sm">Soma do Pedido</p>
+            <p class="text-xl font-bold" id="carrinho-total">R$ 0,00</p>
+        </div>
+        <button class="bg-white text-primary px-6 py-2 rounded-xl font-bold shadow-lg">Ver Carrinho</button>
+    </div>
+
+    <div id="carrinho-modal"
+        class="fixed inset-0 bg-black/60 z-[110] flex flex-col justify-end sm:justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white w-full sm:w-[500px] max-h-[85vh] rounded-t-3xl sm:rounded-3xl flex flex-col transform translate-y-full sm:translate-y-0 transition-transform duration-300"
+            id="carrinho-modal-content">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h2 class="text-2xl font-bold">Seu Carrinho</h2>
+                <button onclick="fecharModalCarrinho()" class="text-3xl font-light hover:text-primary">&times;</button>
+            </div>
+            <div id="carrinho-itens-container" class="p-6 flex-1 overflow-y-auto flex flex-col gap-4">
+                </div>
+            <div class="p-8 border-t bg-gray-50 rounded-b-3xl">
+                <input type="text" id="cliente-nome" placeholder="Seu Nome Completo" class="w-full mb-3 p-3 border border-gray-300 rounded-lg outline-none focus:border-primary">
+                <input type="text" id="cliente-endereco" placeholder="Endereço de Entrega (Rua, Número, Bairro)" class="w-full mb-4 p-3 border border-gray-300 rounded-lg outline-none focus:border-primary">
+                
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-lg font-bold text-gray-500">Total:</span>
+                    <span id="modal-carrinho-total" class="text-3xl font-black text-primary">R$ 0,00</span>
+                </div>
+                <button onclick="fecharPedido()" id="btn-fechar-pedido"
+                    class="w-full bg-primary text-white py-4 rounded-xl text-lg font-bold shadow-xl hover:bg-black active:scale-95 transition-all">
+                    Fechar Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Verifique se esta URL é exatamente a do seu projeto na Vercel
         const API_URL = 'https://aula-7-backend-vercel-lacos-de-acuc.vercel.app/api';
         const navCategorias = document.getElementById('nav-categorias');
         const listaProdutos = document.getElementById('lista-produtos');
         const categoriaTitulo = document.getElementById('categoria-titulo');
         let categoriasData = [];
+        let carrinho = [];
 
+        // -- LOGICA CATEGORIAS E PRODUTOS --
         async function carregarCategorias() {
             try {
                 const response = await fetch(`${API_URL}/categorias`);
                 if (!response.ok) throw new Error('Erro na rede');
                 const rawData = await response.json();
-                // Garante que cada categoria tenha um id (usa índice+1 como fallback)
+                
                 categoriasData = rawData.map((cat, index) => ({
                     ...cat,
                     id: cat.id ?? (index + 1)
@@ -242,15 +285,12 @@
             }
 
             produtos.forEach(p => {
-                // CORREÇÃO DOS CAMPOS: Usando p.preco e p.imagem_url (conforme SQL)
                 const valor = p.preco || 0;
                 const precoFormatado = valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
                 
-                // Prioriza imagem_url que definimos no Supabase
                 const imgPath = p.imagem_url || p.imagem || 'logo.png';
                 const imgSource = imgPath.startsWith('http') ? imgPath : `./assets/images/${imgPath}`;
                 
-                // Limpa aspas simples da descrição para não quebrar o clique
                 const descSanitizada = (p.descricao || '').replace(/'/g, "\\'").replace(/\n/g, " ");
 
                 const card = document.createElement('div');
@@ -273,83 +313,7 @@
             });
         }
 
-        carregarCategorias();
-    </script>
-
-     <!-- FOOTER -->
-    <footer class="mt-24 text-center py-12 text-sm text-white bg-dark">
-        <h3 class="text-lg font-bold mb-2">laços de Açúcar - Sorvetes Artesanais</h3>
-        <p>Rua Prof. Toledo, 500, centro - Sorocaba</p>
-        <p>WhatsApp: (15) 98765-4321</p>
-        <p>Aberto todos os dias das 14h às 23h</p>
-    </footer>
-
-    <!-- BOTÃO WHATSAPP -->
-    <a href="https://wa.me/5515987654321" target="_blank" class="fixed bottom-5 right-5">
-        <img src="./assets/images/whatsapp.png" alt="Link WhatsApp" class="h-[60px]">
-    </a>
-
-    <!-- MODAL DETALHES -->
-    <div id="detalhes-modal"
-        class="fixed inset-0 bg-black/70 z-[100] flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 px-4 backdrop-blur-sm">
-        <div class="bg-white w-full max-w-[400px] rounded-[30px] overflow-hidden transform scale-95 transition-transform duration-300 relative flex flex-col"
-            id="detalhes-modal-content">
-            <button onclick="fecharModalDetalhes()"
-                class="absolute top-4 right-4 bg-white/80 w-10 h-10 rounded-full font-bold text-2xl z-10 hover:text-primary transition-colors">&times;</button>
-            <div class="w-full h-[280px] bg-gray-50 flex justify-center items-center p-8 relative">
-                <img id="detalhes-img" src="" alt="Produto" class="w-full h-full object-contain drop-shadow-xl relative z-10">
-            </div>
-            <div class="p-8">
-                <h2 id="detalhes-nome" class="text-3xl font-black text-dark mb-1">Nome</h2>
-                <p id="detalhes-preco" class="text-2xl font-black text-primary mb-4">R$ 0,00</p>
-                <div class="bg-gray-50 rounded-xl p-4 mb-6">
-                    <p id="detalhes-desc" class="text-gray-600 text-sm leading-relaxed">Descrição...</p>
-                </div>
-                <button id="detalhes-btn-add" class="w-full bg-primary text-white py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-red-700 active:scale-95 transition-all">Adicionar ao Pedido</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- RODAPÉ CARRINHO -->
-    <div id="carrinho-footer"
-        class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 z-[90] shadow-xl transform translate-y-full transition-transform duration-300 flex justify-between items-center cursor-pointer"
-        onclick="abrirModalCarrinho()">
-        <div>
-            <p class="text-sm">Soma do Pedido</p>
-            <p class="text-xl font-bold" id="carrinho-total">R$ 0,00</p>
-        </div>
-        <button class="bg-white text-primary px-6 py-2 rounded-xl font-bold shadow-lg">Ver Carrinho</button>
-    </div>
-
-    <!-- MODAL CARRINHO -->
-    <div id="carrinho-modal"
-        class="fixed inset-0 bg-black/60 z-[110] flex flex-col justify-end sm:justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-white w-full sm:w-[500px] max-h-[85vh] rounded-t-3xl sm:rounded-3xl flex flex-col transform translate-y-full sm:translate-y-0 transition-transform duration-300"
-            id="carrinho-modal-content">
-            <div class="p-6 border-b flex justify-between items-center">
-                <h2 class="text-2xl font-bold">Seu Carrinho</h2>
-                <button onclick="fecharModalCarrinho()" class="text-3xl font-light hover:text-primary">&times;</button>
-            </div>
-            <div id="carrinho-itens-container" class="p-6 flex-1 overflow-y-auto flex flex-col gap-4">
-                <!-- Itens -->
-            </div>
-            <div class="p-8 border-t bg-gray-50 rounded-b-3xl">
-                <div class="flex justify-between items-center mb-6">
-                    <span class="text-lg font-bold text-gray-500">Total:</span>
-                    <span id="modal-carrinho-total" class="text-3xl font-black text-primary">R$ 0,00</span>
-                </div>
-                <button onclick="fecharPedido()" id="btn-fechar-pedido"
-                    class="w-full bg-primary text-white py-4 rounded-xl text-lg font-bold shadow-xl hover:bg-black active:scale-95 transition-all">
-                    Fechar Pedido (Usar GPS)
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT CARRINHO -->
-    <script>
-        let carrinho = [];
-        
+        // -- LÓGICA DO CARRINHO E MODAIS --
         function atualizarCarrinho() {
             localStorage.setItem('lacosdeacucar_carrinho', JSON.stringify(carrinho));
             const total = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
@@ -429,42 +393,81 @@
             setTimeout(() => document.getElementById('detalhes-modal').classList.add('opacity-0', 'pointer-events-none'), 300);
         }
 
-        function fecharPedido() {
-            if (carrinho.length === 0) return;
-            const btn = document.getElementById('btn-fechar-pedido');
-            btn.innerText = "LOCALIZANDO...";
-            navigator.geolocation.getCurrentPosition(
-                (pos) => {
-                    btn.innerText = "Fechar Pedido (Usar GPS)";
-                    alert("Pedido Finalizado com Sucesso via GPS!");
-                    carrinho = [];
-                    atualizarCarrinho();
-                    fecharModalCarrinho();
-                },
-                (err) => {
-                    btn.innerText = "Fechar Pedido (Usar GPS)";
-                    alert("Pedido Finalizado!");
-                    carrinho = [];
-                    atualizarCarrinho();
-                    fecharModalCarrinho();
-                }
-            );
+        // -- NOVA ADAPTAÇÃO: FECHAR PEDIDO ENVIANDO PARA API DO PROFESSOR --
+        async function fecharPedido() {
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            const nome = document.getElementById('cliente-nome').value;
+            const endereco = document.getElementById('cliente-endereco').value;
+
+            if (!nome || !endereco) {
+                alert("Por favor, preencha seu nome e endereço de entrega!");
+                return;
+            }
+
+            const total = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
+            
+            // Monta a estrutura JSON esperada pelo Backend
+            const payloadPedido = {
+                cliente_nome: nome,
+                cliente_endereco: endereco,
+                itens: carrinho,
+                total: total
+            };
+
+            const btnFechar = document.getElementById('btn-fechar-pedido');
+            btnFechar.innerText = "Enviando...";
+            btnFechar.disabled = true;
+            btnFechar.classList.add("opacity-50");
+
+            try {
+                const resposta = await fetch(`${API_URL}/pedidos`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payloadPedido)
+                });
+
+                if (!resposta.ok) throw new Error('Erro ao enviar pedido');
+
+                alert("Pedido enviado com sucesso para a cozinha!");
+                
+                // Limpa campos e dados locais
+                document.getElementById('cliente-nome').value = '';
+                document.getElementById('cliente-endereco').value = '';
+                carrinho = [];
+                atualizarCarrinho();
+                fecharModalCarrinho();
+            } catch (erro) {
+                console.error(erro);
+                alert("Ops! Ocorreu um problema de conexão. Tente novamente.");
+            } finally {
+                btnFechar.innerText = "Fechar Pedido";
+                btnFechar.disabled = false;
+                btnFechar.classList.remove("opacity-50");
+            }
         }
 
         function inicializar() {
             const salvo = localStorage.getItem('lacosdeacucar_carrinho');
             if (salvo) { carrinho = JSON.parse(salvo); atualizarCarrinho(); }
         }
+        
+        carregarCategorias();
         inicializar();
 
-        //AULA 12: REGISTRANDO O SERVICE WORKER (PARA TRANSFORMAR EM PWA)
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('Service Worker Registrado no Porto!', reg))
-            .catch(err => console.error('Erro da página', err));
-        });
-    }
+        // REGISTRANDO O SERVICE WORKER (PWA)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('Service Worker Registrado no Porto!', reg))
+                .catch(err => console.error('Erro da página', err));
+            });
+        }
     </script>
 </body>
 </html>
